@@ -1,5 +1,5 @@
+gemspec
 gem 'hecks-app'
-gem 'soccer_season'
 gem 'pry'
 gem 'rspec'
-gemspec
+gem 'soccer_season'
