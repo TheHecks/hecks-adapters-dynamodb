@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'aws-sdk-dynamodb'
 require 'active_record'
 require 'securerandom'
