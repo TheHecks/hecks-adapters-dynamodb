@@ -1,5 +1,5 @@
 module HecksApp
-  module DrivenAdapters
+  module Adapters
     class Dynamodb
       module TableBuilder
         def self.build(table)

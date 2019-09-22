@@ -1,9 +1,9 @@
 module HecksApp
-  module DrivenAdapters
+  module Adapters
     class Dynamodb
       class Table
         attr_reader :fields
-        
+
         def initialize(aggregate)
           @aggregate = aggregate
           @root = @aggregate.instance_variable_get(:@root)

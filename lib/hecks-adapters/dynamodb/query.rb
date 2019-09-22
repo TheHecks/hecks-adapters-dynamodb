@@ -1,5 +1,5 @@
 module HecksApp
-  module DrivenAdapters
+  module Adapters
     class Dynamodb
       module Query
         def self.query(table, id)

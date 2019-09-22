@@ -11,7 +11,7 @@ require_relative 'dynamodb/query'
 require_relative 'dynamodb/put_item'
 
 module HecksApp
-  module DrivenAdapters
+  module Adapters
     class Dynamodb
       BUILDERS = [TableBuilder, RepositoryBuilder].freeze
 

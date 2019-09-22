@@ -1,5 +1,5 @@
 module HecksApp
-  module DrivenAdapters
+  module Adapters
     class Dynamodb
       class CreateTable
         def initialize(table)
