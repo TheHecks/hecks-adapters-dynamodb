@@ -11,7 +11,7 @@ module HecksApp
             end
 
             define_method 'fetch' do |fetchable|
-              self.class.const_get(self.class.to_s.gsub('::Repository', '')).default(
+              self.class.const_get(self.class.to_s.gsub('::Repository', '')).build(
                 Query.query(table, ID.for_fetchable(fetchable))
               )
             end

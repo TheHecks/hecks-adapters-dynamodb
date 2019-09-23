@@ -11,14 +11,14 @@ App.config do
 end
 
 describe 'Playground' do
-  let(:red_team) { App[:Teams].default(name: 'redteam').tap(&:save).as_json.deep_symbolize_keys }
-  let(:blue_team) { App[:Teams].default(name: 'blueteam').tap(&:save).as_json.deep_symbolize_keys }
+  let(:red_team) { App[:Teams].build(name: 'redteam').tap(&:save).as_json.deep_symbolize_keys }
+  let(:blue_team) { App[:Teams].build(name: 'blueteam').tap(&:save).as_json.deep_symbolize_keys }
 
   let(:player) do
-    App[:Players].default(name: 'Chris', team: red_team).tap(&:save)
+    App[:Players].build(name: 'Chris', team: red_team).tap(&:save)
   end
 
-  let(:pitch) { App[:Pitches].default(name: 'backyard').tap(&:save) }
+  let(:pitch) { App[:Pitches].build(name: 'backyard').tap(&:save) }
 
   let(:fixture) do
     {
@@ -29,7 +29,7 @@ describe 'Playground' do
   end
 
   let(:match) do
-    App[:Matches].default(
+    App[:Matches].build(
       fixture: fixture,
       teams: [red_team, blue_team],
       pitch: pitch.as_json.deep_symbolize_keys
@@ -37,7 +37,7 @@ describe 'Playground' do
   end
 
   it do
-    team = App[:Teams].default(name: 'redteam')
+    team = App[:Teams].build(name: 'redteam')
     App[team].save
     expect(App[:Teams].fetch(team.id)).to be
   end
