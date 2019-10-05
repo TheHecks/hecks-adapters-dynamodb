@@ -36,9 +36,15 @@ describe 'Playground' do
     ).tap(&:save)
   end
 
-  it do
+  it '#save' do
     team = App[:Teams].build(name: 'redteam')
     App[team].save
     expect(App[:Teams].fetch(team.id)).to be
+  end
+
+  it '#all' do
+    team = App[:Teams].build(name: 'redteam')
+    team = App[team].save
+    expect(App[:Teams].all.map(&:id)).to include team.id
   end
 end

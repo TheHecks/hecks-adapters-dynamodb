@@ -15,6 +15,14 @@ module HecksApp
                 Query.query(table, ID.for_fetchable(fetchable))
               )
             end
+
+            define_method 'all' do
+              All.query(table).map do |domain_object|
+                self.class.const_get(self.class.to_s.gsub('::Repository', '')).build(
+                  domain_object
+                )
+              end
+            end
           end
         end
       end

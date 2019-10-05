@@ -8,6 +8,7 @@ require_relative 'dynamodb/table_builder'
 require_relative 'dynamodb/table'
 require_relative 'dynamodb/create_table'
 require_relative 'dynamodb/query'
+require_relative 'dynamodb/all'
 require_relative 'dynamodb/put_item'
 
 module HecksApp
