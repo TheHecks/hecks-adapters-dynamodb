@@ -10,6 +10,7 @@ require_relative 'dynamodb/create_table'
 require_relative 'dynamodb/query'
 require_relative 'dynamodb/all'
 require_relative 'dynamodb/put_item'
+require_relative 'dynamodb/destroy'
 
 module HecksApp
   module Adapters

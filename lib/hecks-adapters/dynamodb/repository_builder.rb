@@ -16,6 +16,12 @@ module HecksApp
               )
             end
 
+            define_method 'destroy' do |domain_object|
+              self.class.const_get(self.class.to_s.gsub('::Repository', '')).build(
+                Query.query(table, domain_object.id)
+              )
+            end
+
             define_method 'all' do
               All.query(table).map do |domain_object|
                 self.class.const_get(self.class.to_s.gsub('::Repository', '')).build(
