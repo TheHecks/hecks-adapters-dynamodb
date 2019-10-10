@@ -52,6 +52,6 @@ describe 'Playground' do
     team = App[:Teams].build(name: 'redteam')
     team = App[team].save
     App[team].destroy
-    expect(App[:Teams].all).to_not include team
+    expect(App[:Teams].all.map(&:id)).to_not include team.id
   end
 end
