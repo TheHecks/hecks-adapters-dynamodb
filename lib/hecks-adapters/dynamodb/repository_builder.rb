@@ -18,7 +18,7 @@ module HecksApp
 
             define_method 'destroy' do |domain_object|
               self.class.const_get(self.class.to_s.gsub('::Repository', '')).build(
-                Query.query(table, domain_object.id)
+                Destroy.destroy(table, domain_object.id)
               )
             end
 
