@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.files       = Dir['lib/**/*.rb']
   s.homepage    = 'https://www.thehecks.com'
 
-  s.add_dependency 'activerecord', '~> 5.2'
+  s.add_dependency 'activerecord', '~> 6.0'
   s.add_dependency 'aws-sdk-dynamodb', '~> 1.34'
 end

@@ -1,3 +1,4 @@
+require 'dotenv/load'
 require 'pry'
 require_relative '../lib/hecks-adapters/dynamodb'
 require 'hecks-app'
